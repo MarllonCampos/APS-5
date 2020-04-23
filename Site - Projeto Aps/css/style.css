@@ -1,0 +1,56 @@
+body{
+    background-color: aquamarine;
+    padding: 0px;
+    margin:0;
+}
+
+
+
+.container{
+    width: 97vw;
+    height: 95vh;
+    margin:auto;
+    margin-top:3vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
+    grid-gap:10px;
+
+}
+
+.content{
+    border: 3px solid black;
+    border-radius: 9px;
+}
+
+
+/* Ajustes no GRID */
+#upper-left{
+    grid-column:1/2;
+}
+
+#upper-right{
+    grid-column: 3/4;
+    grid-row:1/2;
+}
+
+
+#lower-right{
+    grid-column:3/4;
+    grid-row: 3/4;
+
+}
+#lower-left{
+    grid-column:1/2;
+    grid-row: 3/4;
+}
+
+
+#center{
+    grid-column: 2/3;
+    grid-row: 1/4;
+}
+
+/*Fim dos Ajustes no GRID*/
+
