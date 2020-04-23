@@ -8,26 +8,7 @@ body{
     margin-top: 1vh;
 }
 
-
-.container-content{
-    width: 97vw;
-    height: 93vh;
-    margin:auto;
-    
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr ;
-    grid-template-rows: 1fr 1fr 1fr;
-    text-align: center;
-    grid-gap:5px;
-    color:black;
-}
-
-
-.content {
-    border: 3px solid black;
-    border-radius: 9px;
-}
-
+/* Estilização dos menus e Criação do GRID dos Menus */
 .panels{
     width: 97vw;
     height:3vh;
@@ -55,7 +36,29 @@ body{
     border-bottom-width: 0px;
     text-align: center;
 }
+/* Fim das estilização dos menus*/
 
+
+
+/* Criação do GRID e estilo dos objetos dentro do grid*/
+.container-content{
+    width: 97vw;
+    height: 93vh;
+    margin:auto;
+    
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
+    grid-gap:5px;
+    color:black;
+}
+
+.content {
+    border: 3px solid black;
+    border-radius: 9px;
+}
+/*Fim da criação do GRID e estilos*/
 
 /* Ajustes no GRID */
 #upper-left{
