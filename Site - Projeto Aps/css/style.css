@@ -4,37 +4,69 @@ body{
     margin:0;
 }
 
-
-
 .container{
+    margin-top: 1vh;
+}
+
+
+.container-content{
     width: 97vw;
-    height: 95vh;
+    height: 93vh;
     margin:auto;
-    margin-top:3vh;
+    
     display: grid;
     grid-template-columns: 1fr 2fr 1fr ;
     grid-template-rows: 1fr 1fr 1fr;
     text-align: center;
-    grid-gap:10px;
-
+    grid-gap:5px;
+    color:black;
 }
 
-.content{
+
+.content {
     border: 3px solid black;
     border-radius: 9px;
+}
+
+.panels{
+    width: 97vw;
+    height:3vh;
+    margin: auto;
+    display:grid;
+    grid-template-columns:2;
+    grid-template-rows:1;
+    grid-gap:2px;
+}
+    
+
+.rightpanel{
+    grid-column:2/3;
+    grid-row: 1/2;
+    border: 3px solid black;
+    border-radius:  10px 10px 0px 0px;
+    border-bottom-width: 0px;
+    text-align: center;
+}
+
+.leftpanel{
+    grid-column:1/2;
+    border:3px solid black;
+    border-radius:  10px 10px 0px 0px;
+    border-bottom-width: 0px;
+    text-align: center;
 }
 
 
 /* Ajustes no GRID */
 #upper-left{
     grid-column:1/2;
+    grid-row: 1/2;
 }
 
 #upper-right{
     grid-column: 3/4;
     grid-row:1/2;
 }
-
 
 #lower-right{
     grid-column:3/4;
@@ -51,6 +83,9 @@ body{
     grid-column: 2/3;
     grid-row: 1/4;
 }
+
+
+
 
 /*Fim dos Ajustes no GRID*/
 
