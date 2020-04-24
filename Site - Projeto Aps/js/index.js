@@ -1,14 +1,17 @@
 let upper_right = document.getElementById("upper-right")
+let center = document.querySelector(".center")
+var containerContent = document.querySelector(".container-content")
 
 
 
 
-function leftside(){
+function leftside(sheet){
+   document.querySelector('.pagestyle').setAttribute('href',sheet)
    document.body.innerHTML= `
          <div class="container"> 
               <div class="panels">
-                  <div class="leftpanel">x</div>
-                  <div class="rightpanel" onmouseover="rightside()">y</div>
+                  <div class="leftpanel" onclick="leftside()">x</div>
+                  <div class="rightpanel" onclick="rightside('css/secondpage.css')">y</div>
               </div>
 
               <div class="container-content">
@@ -24,31 +27,36 @@ function leftside(){
               </div>
 
           </div>  
+
+          
    `
+   
+   
 }
 
 
+function rightside(sheet){
+   document.querySelector('.pagestyle').setAttribute('href',sheet)
 
 
-
-
-
-function rightside(){
    document.body.innerHTML=`
-            <div class="container"> 
 
-               <div class="panels">
-                   <div class="leftpanel" onmouseenter="leftside()">x</div>
-                   <div class="rightpanel" onmouseenter="rightside()">y</div>
-               </div>
+               <div class="container"> 
 
-               <div class="container-content">
+                  <div class="panels">
+                      <div class="leftpanel" onclick="leftside('css/style.css')">x</div>
+                      <div class="rightpanel">y</div>
+                  </div>
 
-                   <div class='content'id='center'>c</div>
+                  <div class="container-content">
 
-               </div>
+                      <div class='content'id='center'>c</div>
 
-            </div>  
+                  </div>
+
+               </div>  
+
+      </div>
 `
 }
 

@@ -1,5 +1,5 @@
 body{
-    background-color: white;
+    background-color: aquamarine;
     padding: 0px;
     margin:0;
 }
@@ -25,16 +25,24 @@ body{
     grid-row: 1/2;
     border: 3px solid black;
     border-radius:  10px 10px 0px 0px;
-    border-bottom-width: 0px;
+    border-width: 0px;
     text-align: center;
+}
+
+.rightpanel:hover{
+    background-color: red;
 }
 
 .leftpanel{
     grid-column:1/2;
     border:3px solid black;
     border-radius:  10px 10px 0px 0px;
-    border-bottom-width: 0px;
+    border-width: 0px;
     text-align: center;
+}
+
+.leftpanel:hover{
+    background-color: blue;
 }
 /* Fim das estilização dos menus*/
 
@@ -45,7 +53,6 @@ body{
     width: 97vw;
     height: 93vh;
     margin:auto;
-    
     display: grid;
     grid-template-columns: 1fr 2fr 1fr ;
     grid-template-rows: 1fr 1fr 1fr;
@@ -64,6 +71,7 @@ body{
 #upper-left{
     grid-column:1/2;
     grid-row: 1/2;
+    
 }
 
 #upper-right{
