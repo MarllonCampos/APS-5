@@ -10,7 +10,7 @@ function leftside(sheet){
    document.body.innerHTML= `
          <div class="container"> 
               <div class="panels">
-                  <div class="leftpanel" onclick="leftside()">x</div>
+                  <div class="leftpanel" onclick="">x</div>
                   <div class="rightpanel" onclick="rightside('css/secondpage.css')">y</div>
               </div>
 
