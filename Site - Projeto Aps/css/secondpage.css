@@ -1,5 +1,5 @@
 body{
-    background: blue;
+    background: #312f2f;
     margin:auto;
 }
 
@@ -25,7 +25,7 @@ body{
 }
 
 .rightpanel:hover{
-    background-color: red;
+    background-color: #22181c;
 }
 
 .leftpanel{
@@ -37,7 +37,7 @@ body{
 }
 
 .leftpanel:hover{
-    background-color: violet;
+    background-color: #f6e8ea;
 }
 .container{
     margin-top: 1vh;
@@ -54,7 +54,7 @@ body{
 }
 
 .content {
-    border: 3px solid white;
+    border: 3px solid #84dccf;
     border-radius: 9px;
 }
 

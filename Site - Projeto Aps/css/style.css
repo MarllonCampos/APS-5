@@ -1,5 +1,5 @@
 body{
-    background-color: #0b2545;
+    background-color: #312f2f;
     padding: 0px;
     margin:0;
 }
@@ -30,7 +30,7 @@ body{
 }
 
 .rightpanel:hover{
-    background-color: #134074;
+    background-color: #22181c;
 }
 
 .leftpanel{
@@ -42,7 +42,7 @@ body{
 }
 
 .leftpanel:hover{
-    background-color: #13315c;
+    background-color: #f6e8ea;
 }
 /* Fim das estilização dos menus*/
 
@@ -62,7 +62,7 @@ body{
 }
 
 .content {
-    border: 3px solid black;
+    border: 3px solid #84dccf;
     border-radius: 9px;
 }
 /*Fim da criação do GRID e estilos*/
@@ -99,6 +99,6 @@ body{
 
 p{
     font-size: 22px;
-    color: blanchedalmond;
+    color: #ef626c;
 }
 
