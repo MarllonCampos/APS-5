@@ -79,9 +79,6 @@ body{
     display: none;
 }
 
-
-
-
 #center{
     grid-column: 1/2;
     grid-row: 1/4;
