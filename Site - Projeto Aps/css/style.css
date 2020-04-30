@@ -1,5 +1,5 @@
 body{
-    background-color: aquamarine;
+    background-color: #0b2545;
     padding: 0px;
     margin:0;
 }
@@ -30,19 +30,19 @@ body{
 }
 
 .rightpanel:hover{
-    background-color: red;
+    background-color: #134074;
 }
 
 .leftpanel{
     grid-column:1/2;
-    border:3px solid black;
+    border:3px black;
     border-radius:  10px 10px 0px 0px;
     border-width: 0px;
     text-align: center;
 }
 
 .leftpanel:hover{
-    background-color: blue;
+    background-color: #13315c;
 }
 /* Fim das estilização dos menus*/
 
