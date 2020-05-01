@@ -16,24 +16,26 @@ var grafico = new Chart(ctx,{
     }
 })
 
+const tempo = 2000; //Vinte segundos
+const ajax = new XMLHttpRequest()
+console.log('teste1')
 
-var ajax = new XMLHttpRequest()
-
-function BDAcess(){
-    var tempo = 20000; //Vinte segundos
-
+setInterval( function BDAcess(){
+    
     (function selectNumUsuarios () {
+       
         ajax({
-          url: "index.php",
+          url: "php/index.php",
           success: function (n) {
               //essa é a function success, será executada se a requisição obtiver exito
               document.getElementById("#qqId").text(n);
+              
           },
           complete: function () {
               setTimeout(selectNumUsuarios, tempo);
           }
        });
-    })();
-};
+    });
+},tempo)
 
 

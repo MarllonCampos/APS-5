@@ -10,4 +10,9 @@ if(mysqli_connect_errno($conexão)){
     echo"Conexão não estabelecida";
 }else{
         echo"Conexão realizada com sucesso!";}
+
+
+
+
+        
 ?>
