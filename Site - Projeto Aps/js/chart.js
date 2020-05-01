@@ -29,16 +29,10 @@ setInterval(function acessoBD(){
     ajax.open("GET","php/index.php",true)
     ajax.send()
 
-
-
-
-
-
-
 },2000)
 
 
-
+/*
 setInterval( function BDAcess(){
     
     (function selectNumUsuarios () {
@@ -56,5 +50,5 @@ setInterval( function BDAcess(){
        });
     });
 },tempo)
-
+*/
 
