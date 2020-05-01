@@ -20,6 +20,25 @@ const tempo = 2000; //Vinte segundos
 const ajax = new XMLHttpRequest()
 console.log('teste1')
 
+setInterval(function acessoBD(){
+    ajax.onreadystatechange = function(){
+        if(ajax.readyState == 4 && ajax.status == 200){
+            document.getElementById("#qqId").innerText = ajax.responseText
+        }
+    }
+    ajax.open("GET","php/index.php",true)
+    ajax.send()
+
+
+
+
+
+
+
+},2000)
+
+
+
 setInterval( function BDAcess(){
     
     (function selectNumUsuarios () {
