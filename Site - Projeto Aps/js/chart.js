@@ -1,5 +1,6 @@
 var ctx = document.getElementsByClassName('chart')
 
+
 var grafico = new Chart(ctx,{
     type:'line',
     data:{
@@ -14,3 +15,25 @@ var grafico = new Chart(ctx,{
 
     }
 })
+
+
+var ajax = new XMLHttpRequest()
+
+function BDAcess(){
+    var tempo = 20000; //Vinte segundos
+
+    (function selectNumUsuarios () {
+        ajax({
+          url: "index.php",
+          success: function (n) {
+              //essa é a function success, será executada se a requisição obtiver exito
+              document.getElementById("#qqId").text(n);
+          },
+          complete: function () {
+              setTimeout(selectNumUsuarios, tempo);
+          }
+       });
+    })();
+};
+
+
