@@ -10,6 +10,7 @@ var containerContent = document.querySelector(".container-content")
 
 function leftside(sheet){
         document.querySelector('.pagestyle').setAttribute('href',sheet)
+        
    
 }
 
