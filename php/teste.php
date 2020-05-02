@@ -21,13 +21,11 @@
             $data=$registro['Data'];
             $hora=$registro['Hora'];
             
-            echo "\nID: ",$id," Temperatura: ", $temperatura,"°C Data: ", $data," Hora: ", $hora;
-             
-          
         }while($registro=mysqli_fetch_assoc($resultado));
 
-        print_r($num);
-    
-    mysqli_close($conexão);
+       
+        
+        echo json_encode($num);
+        mysqli_close($conexão);
 ?>    
         
