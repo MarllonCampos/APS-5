@@ -18,10 +18,8 @@
             $data=$registro['Data'];
             $hora=$registro['Hora'];
             
-            echo $id;
-            echo $temperatura;
-            echo $data;
-            echo $hora;
+            echo "ID: ",$id," Temperatura: ", $temperatura,"°C Data: ", $data," Hora: ", $hora;
+            
         }
     mysqli_close($conexão);
 ?>    
