@@ -95,7 +95,10 @@ body{
 #center{
     grid-column: 2/3;
     grid-row: 1/4;
+    display:grid;
+    align-items: center;
 }
+
 
 /*Fim dos Ajustes no GRID*/
 
