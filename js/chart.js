@@ -16,39 +16,17 @@ var grafico = new Chart(ctx,{
     }
 })
 
-const tempo = 2000; //Vinte segundos
-const ajax = new XMLHttpRequest()
-console.log('teste1')
 
-setInterval(function acessoBD(){
-    ajax.onreadystatechange = function(){
-        if(ajax.readyState == 4 && ajax.status == 200){
-            document.getElementById("#qqId").innerText = ajax.responseText
-        }
+fetch('./php/teste.php')
+.then(json => {
+    if(json.status  > 199 && json.status <300){
+        console.log(`O codigo foi ${json.status}`)
+        console.log(json)
     }
-    ajax.open("GET","php/index.php",true)
-    ajax.send()
-
-},2000)
+})
 
 
-/*
-setInterval( function BDAcess(){
-    
-    (function selectNumUsuarios () {
-       
-        ajax({
-          url: "php/index.php",
-          success: function (n) {
-              //essa é a function success, será executada se a requisição obtiver exito
-              document.getElementById("#qqId").text(n);
-              
-          },
-          complete: function () {
-              setTimeout(selectNumUsuarios, tempo);
-          }
-       });
-    });
-},tempo)
-*/
+
+const tempo = 2000; //Vinte segundos
+
 
