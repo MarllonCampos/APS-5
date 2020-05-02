@@ -23,9 +23,9 @@
             
         }while($registro=mysqli_fetch_assoc($resultado));
 
-       
-        
-        echo json_encode($num);
+
+
         mysqli_close($conexão);
+        exit(json_encode($num));
 ?>    
         

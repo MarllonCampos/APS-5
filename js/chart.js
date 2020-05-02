@@ -15,12 +15,10 @@ var grafico = new Chart(ctx,{
 
     }
 })
-const getData = async () =>{ 
-    fetch('./php/teste.php')
- .then((res)=>{
-        console.log(res)
-    })
-}
+fetch('./php/teste.php')
+.then(function(res){
+    console.log(res.status)
+})
 
 
 const tempo = 2000; //Vinte segundos
