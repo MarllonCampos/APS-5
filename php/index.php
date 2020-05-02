@@ -10,9 +10,8 @@
 
     $sql = "select * from TEMPERATURA";
     $resultado = mysqli_query($conexão,$sql) or die("erro ao consultar banco de dados");
-        
-        while($registro = mysqli_fetch_assoc($resultado))
-        {
+    $registro = mysqli_fetch_assoc($resultado) ;   
+       do{
             $id=$registro['id'];
             $temperatura=$registro['Temperatura'];
             $data=$registro['Data'];
@@ -20,7 +19,8 @@
             
             echo "ID: ",$id," Temperatura: ", $temperatura,"°C Data: ", $data," Hora: ", $hora;
             
-        }
+        }while($registro=mysqli_fetch_assoc($resultado));
+
     mysqli_close($conexão);
 ?>    
         
