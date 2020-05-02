@@ -17,38 +17,9 @@ var grafico = new Chart(ctx,{
 })
 
 const tempo = 2000; //Vinte segundos
-const ajax = new XMLHttpRequest()
-console.log('teste1')
 
-setInterval(function acessoBD(){
-    ajax.onreadystatechange = function(){
-        if(ajax.readyState == 4 && ajax.status == 200){
-            document.getElementById("#qqId").innerText = ajax.responseText
-        }
-    }
-    ajax.open("GET","php/index.php",true)
-    ajax.send()
-
-},2000)
-
-
-/*
-setInterval( function BDAcess(){
-    
-    (function selectNumUsuarios () {
-       
-        ajax({
-          url: "php/index.php",
-          success: function (n) {
-              //essa é a function success, será executada se a requisição obtiver exito
-              document.getElementById("#qqId").text(n);
-              
-          },
-          complete: function () {
-              setTimeout(selectNumUsuarios, tempo);
-          }
-       });
-    });
-},tempo)
-*/
-
+fetch('php/index.php') 
+.then((res) => res.json())
+.then(response => {
+    console.log(response)
+}).catch(error => console.log(error))
