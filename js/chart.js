@@ -16,5 +16,17 @@ var grafico = new Chart(ctx,{
     }
 })
 
+
+fetch('./php/teste.php')
+.then(json => {
+    if(json.status  > 199 && json.status <300){
+        console.log(`O codigo foi ${json.status}`)
+        console.log(json)
+    }
+})
+
+
+
 const tempo = 2000; //Vinte segundos
+
 
