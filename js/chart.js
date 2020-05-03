@@ -15,12 +15,19 @@ var grafico = new Chart(ctx,{
 
     }
 })
-fetch('./php/teste.php')
-.then(function(res){
-    console.log(res.status)
-})
+const tempo = 2000; 
+var value = [3,6]
+ function minhaFuncao() {
+    $.ajax({
+        url: './php/index.php',
+        method: 'get',
+        success: function (data) {
+            console.log(data)
+        }
+    });
+}
+console.log(value);
+minhaFuncao();
 
-
-const tempo = 2000; //Vinte segundos
 
 

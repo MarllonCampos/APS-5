@@ -1,18 +1,11 @@
 <?php
-    $Servidor = 'apsunip5.cslcoibcanu8.sa-east-1.rds.amazonaws.com';
-    $User='root';
-    $Senha='apsardunip';
-    $Database='aps';
-    $num = array();
+    include "conexao.php";
 
-    $conexão= mysqli_connect($Servidor,$User,$Senha,$Database) or die ("Conexão não estabelecida!");
-
-
+    $response = array();
+    $num=array();
     $sql = "select * from TEMPERATURA";
     $resultado = mysqli_query($conexão,$sql) or die("erro ao consultar banco de dados");
     $registro = mysqli_fetch_assoc($resultado) ;   
-    
-    
        do{
         
             array_push($num,$registro);
@@ -23,9 +16,9 @@
             
         }while($registro=mysqli_fetch_assoc($resultado));
 
-
-
+        header('Content-Type: application/json;charset=utf-8');
+        echo (json_encode($num));
         mysqli_close($conexão);
-        exit(json_encode($num));
+        
 ?>    
         
