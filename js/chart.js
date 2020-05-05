@@ -17,6 +17,7 @@ var grafico = new Chart(ctx,{
 })
 const tempo = 2000; 
 var value = [3,6]
+
  function minhaFuncao() {
     $.ajax({
         url: './php/teste.php',
@@ -30,9 +31,20 @@ var value = [3,6]
             console.log(erro)
         }
     });
+
+
+
 }
-console.log(value);
 minhaFuncao();
 
 
+
+async function getData(){
+    const response = await fetch('./php/teste.php')
+
+    data = await (response)){
+
+    }
+
+}
 
