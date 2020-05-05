@@ -1,6 +1,6 @@
 <?php
     include "conexao.php";
-
+    header('Content-Type: application/json;charset=utf-8');
     $response = array();
     $num=array();
     $sql = "select * from TEMPERATURA";
@@ -16,8 +16,12 @@
             
         }while($registro=mysqli_fetch_assoc($resultado));
 
-        header('Content-Type: application/json;charset=utf-8');
-        echo (json_encode($num));
+        $response = array(
+            'status' => true,
+            'message' => 'sucess',
+            'data' => ph_fetch_all($num)
+        );
+        echo (json_encode($response));
         mysqli_close($conexão);
         
 ?>    
