@@ -19,10 +19,15 @@ const tempo = 2000;
 var value = [3,6]
  function minhaFuncao() {
     $.ajax({
-        url: './php/index.php',
+        url: './php/teste.php',
+        cache: false,
+        dataType: 'json',
         method: 'get',
         success: function (data) {
             console.log(data)
+        },
+        error:function(erro){
+            console.log(erro)
         }
     });
 }
