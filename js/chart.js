@@ -17,13 +17,13 @@ var grafico = new Chart(ctx,{
 })
 const tempo = 2000; 
 var value = [3,6]
-
+/*
 minhaFuncao()
 
 
  function minhaFuncao() {
     $.ajax({
-        url: './php/teste.php',
+        url: '../api/app.js/',
         cache: false,
         dataType: 'json',
         method: 'get',
@@ -35,3 +35,4 @@ minhaFuncao()
         }
     });
 }
+*/
