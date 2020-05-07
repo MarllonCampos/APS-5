@@ -9,7 +9,7 @@ var grafico = new Chart(ctx,{
             [{label:"taxa de cliques 2016",
             data:[3,4,2,5,7,8,9,1,3,4,1,23],
             borderWidth:2,
-            borderColor:'rgb(77,166,253,0.85)',
+            borderColor:'rgba(77,166,253,0.85)',
             backgroundColor:'transparent',
         }]
 
@@ -17,6 +17,9 @@ var grafico = new Chart(ctx,{
 })
 const tempo = 2000; 
 var value = [3,6]
+
+minhaFuncao()
+
 
  function minhaFuncao() {
     $.ajax({
@@ -31,20 +34,4 @@ var value = [3,6]
             console.log(erro)
         }
     });
-
-
-
 }
-minhaFuncao();
-
-
-
-async function getData(){
-    const response = await fetch('./php/teste.php')
-
-    data = await (response)){
-
-    }
-
-}
-
