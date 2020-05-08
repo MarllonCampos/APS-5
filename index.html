@@ -2,6 +2,23 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src *;
+               script-src 'self' 'unsafe-inline' 'unsafe-eval'
+                           127.0.0.1:*
+                           http://*.gstatic.com          
+                           http://*.googleapis.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js
+                           ;
+               style-src  'self' 'unsafe-inline'    
+                           127.0.0.1
+                           http://*.gstatic.com         
+                           http://*.googleapis.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+    ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arduino</title>
     <link class='pagestyle 'rel="stylesheet" href="css/style.css">

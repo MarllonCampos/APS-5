@@ -8,7 +8,7 @@ function minhaFuncao() {
         dataType: 'json',
         type: 'get',
         success: function (data) {
-            console.log(data.cep)
+            console.log(data)
         },
         error:function(erro){
             console.log(erro)
