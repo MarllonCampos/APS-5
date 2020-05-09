@@ -1,12 +1,16 @@
 var ctx = document.getElementsByClassName('chart')
+var aux_temp = []
+var aux_data_hora = []
+var temperatura =[]
+var data_hora  = []
 
 var grafico = new Chart(ctx,{
     type:'line',
     data:{
-        labels:['Jan','Fev','Marc','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+        labels:['a30',"b40","c60","d70"],
         datasets:
-            [{label:"taxa de cliques 2016",
-            data:[3,4,2,5,7,8,9,1,3,4,1,23],
+            [{label:"Tabela de Temperaturas",
+            data:["30","40","60","70"],
             borderWidth:2,
             borderColor:'rgba(77,166,253,0.85)',
             backgroundColor:'transparent',
@@ -21,14 +25,32 @@ var RefreshAutomatico = setInterval(function minhafuncao() {
          dataType: 'json', 
          cache:false,
          type: 'get',
-         success: function (data) {
-             console.log(data)
+         success: function (response) {
+             updateChart(response)
          },
          error:function(erro){
              console.log(erro)
          },
          
      })
+     
+     function updateChart(data){
+        grafico.data.labels = []
+        grafico.data.datasets[0].data = []
+        for (let i = 0 ; i < data.temperatura.length ; i++){
+
+           grafico.data.labels.push(`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} ${data.hora[i]}`)
+           grafico.data.datasets[0].data.push(data.temperatura[i])
+
+          
+        } 
+        grafico.update()
+    }
+    aux_data_hora =[]
+    aux_temp = []
  }
-,20000)
+,2000)
+
+
+
 
