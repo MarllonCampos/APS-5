@@ -8,9 +8,6 @@ const Cors = require('cors')
 const rotaTemperatura = require('./routes/temperatura')
 
 
-
-
-
 app.use(morgan('dev'))
 
 
@@ -31,6 +28,8 @@ app.get('/',(request,response)=>{
         mensagem : "Hello World"
     })
 })
+
+
 
 app.use('/temperatura',rotaTemperatura)
 

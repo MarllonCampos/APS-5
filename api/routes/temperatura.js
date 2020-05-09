@@ -2,6 +2,8 @@ const express = require('express')
 const router = express.Router()
 const mysql = require('../mysql').pool
 
+
+
 router.get('/',(req,res,next)=>{
     mysql.getConnection((error,conn)=>{
         if(error){return res.status(500).send({error:error})}

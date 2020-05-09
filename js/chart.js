@@ -1,7 +1,4 @@
 var ctx = document.getElementsByClassName('chart')
-const years = []
-const temps = []
-
 
 var grafico = new Chart(ctx,{
     type:'line',
@@ -17,17 +14,11 @@ var grafico = new Chart(ctx,{
 
     }
 })
-const tempo = 2000; 
-let value = [3,6]
-
-
-
-
 
 var RefreshAutomatico = setInterval(function minhafuncao() {
     $.ajax({
          url: 'http://localhost:3000/temperatura/',
-         dataType: 'json',
+         dataType: 'json', 
          cache:false,
          type: 'get',
          success: function (data) {
