@@ -26,12 +26,13 @@ router.get('/',(req,res,next)=>{
                         temperatura: temperatura,
                         hora:hora,
                         data: data
-                        
-
                     }   
                 );
                 
             })
+            temperatura = []
+            hora = []
+            data = []
         conn.release();
     })
 })
