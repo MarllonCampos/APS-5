@@ -58,9 +58,8 @@ body{
     height: 93vh;
     margin:auto;
     display: grid;
-    grid-template-columns: 1fr  ;
-    grid-template-rows: 1fr;
-    text-align: center;
+    
+
 }
 
 #upper-right{

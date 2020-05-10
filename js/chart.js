@@ -41,15 +41,29 @@ var RefreshAutomatico = setInterval(function minhafuncao() {
 
            grafico.data.labels.push(`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} ${data.hora[i]}`)
            grafico.data.datasets[0].data.push(data.temperatura[i])
+    
 
-          
+
+           if(aux_data_hora[i] != grafico.data.labels[i]){
+                aux_data_hora.push(`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} ${data.hora[i]}`)
+           }
+           
+           if(aux_temp[i]!= grafico.data.datasets[0].data[i]){
+                aux_temp.push(grafico.data.datasets[0].data[i])
+           }
+            
+
+           
+        }
+
+           
+           
         } 
         grafico.update()
-    }
-    aux_data_hora =[]
-    aux_temp = []
- }
-,2000)
+
+
+
+    }   ,2000)
 
 
 
