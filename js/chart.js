@@ -39,7 +39,7 @@ var RefreshAutomatico = setInterval(function minhafuncao() {
         grafico.data.datasets[0].data = []
         for (let i = 0 ; i < data.temperatura.length ; i++){
 
-            let tempoEdata = (`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} *${data.hora[i]}`).split('*')
+           let tempoEdata = (`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} *${data.hora[i]}`).split('*')
            grafico.data.labels.push(tempoEdata)
            grafico.data.datasets[0].data.push(data.temperatura[i])
     
