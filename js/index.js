@@ -4,9 +4,9 @@ var lower_left = document.querySelector('.lower-left')
 var lower_right = document.querySelector('.lower-right')
 let center = document.querySelector(".center")
 var containerContent = document.querySelector(".container-content")
-var max = 0
-var media =0
-var min =0
+var max = 0.00
+var media = 0.000
+var min = 0.0000
 
 
 
@@ -25,11 +25,12 @@ var updateMedia = setInterval(()=>{
         media = temperatura[i]
     }   
     media = media/temperatura.length
+    
     upper_right.innerHTML = `Máximo valor alcançado: ${max.toFixed(2)}ppm <br> Média dos valores = ${media.toFixed(2)}ppm <br> Minimo valor = ${min.toFixed(2)}ppm`
 
 
     
-},2050)
+},1000)
 
 
 
