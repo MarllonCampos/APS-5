@@ -34,36 +34,28 @@ var RefreshAutomatico = setInterval(function minhafuncao() {
          
      })
      
-     function updateChart(data){
+    function updateChart(data){
         grafico.data.labels = []
         grafico.data.datasets[0].data = []
         for (let i = 0 ; i < data.temperatura.length ; i++){
 
-           let tempoEdata = (`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} *${data.hora[i]}`).split('*')
-           grafico.data.labels.push(tempoEdata)
-           grafico.data.datasets[0].data.push(data.temperatura[i])
-    
-
-
-           if(aux_data_hora[i] != grafico.data.labels[i]){
+            let tempoEdata = (`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} *${data.hora[i]}`).split('*')
+            grafico.data.labels.push(tempoEdata)
+            grafico.data.datasets[0].data.push(data.temperatura[i])
+        
+            if(aux_data_hora[i] != grafico.data.labels[i]){
                 aux_data_hora.push(`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} ${data.hora[i]}`)
-           }
-           
-           if(aux_temp[i]!= grafico.data.datasets[0].data[i]){
+            }
+
+            if(aux_temp[i]!= grafico.data.datasets[0].data[i]){
                 aux_temp.push(grafico.data.datasets[0].data[i])
-           }
-            
+            }
+
 
         }
-
-           
-           
-        } 
+    }
         grafico.update()
-
-
-
-    }   ,2000)
+}   ,2000)
 
 
 
