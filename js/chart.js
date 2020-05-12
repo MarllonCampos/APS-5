@@ -21,15 +21,16 @@ var grafico = new Chart(ctx,{
 
 var RefreshAutomatico = setInterval(function minhafuncao() {
     $.ajax({
-         url: 'http://ec2-18-228-194-165.sa-east-1.compute.amazonaws.com:3000/temperatura/',
+         url: 'http://localhost:3000/temperatura/',
          dataType: 'json', 
          cache:false,
          type: 'get',
          success: function (response) {
              updateChart(response)
+             console.log(response   )
          },
          error:function(erro){
-             console.log(erro)
+             console.log(erro)  
          },
          
      })
@@ -38,8 +39,8 @@ var RefreshAutomatico = setInterval(function minhafuncao() {
         grafico.data.labels = []
         grafico.data.datasets[0].data = []
         for (let i = 0 ; i < data.temperatura.length ; i++){
-
             let tempoEdata = (`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} *${data.hora[i]}`).split('*')
+
             grafico.data.labels.push(tempoEdata)
             grafico.data.datasets[0].data.push(data.temperatura[i])
         
