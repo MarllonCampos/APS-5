@@ -9,47 +9,59 @@ var grafico = new Chart(ctx,{
     data:{
         labels:['a30',"b40","c60","d70"],
         datasets:
-            [{label:"Tabela de Temperaturas",
+            [{label:"Tabela de PPM (Particulas por metro cúbico)",
             data:["30","40","60","70"],
             borderWidth:2,
             borderColor:'rgba(77,166,253,0.85)',
-            backgroundColor:'transparent',
+            backgroundColor:'#10dccf',
         }]
-
+    },
+    options:{
+        scales:{
+            yAxes:[{ ticks:{ callback: function(value,index,values){ return  value + 'ppm'}}}]
+        }
     }
+
 })
 
 var RefreshAutomatico = setInterval(function minhafuncao() {
     $.ajax({
-         url: 'http://localhost:3000/temperatura/',
+         url: 'http://ec2-18-228-194-165.sa-east-1.compute.amazonaws.com:3000/temperatura/?_=1589324951813',
          dataType: 'json', 
          cache:false,
          type: 'get',
          success: function (response) {
              updateChart(response)
+             console.log(response   )
          },
          error:function(erro){
-             console.log(erro)
+             console.log("Alerta, erro em conectar a API")  
          },
          
      })
      
-     function updateChart(data){
+    function updateChart(data){
         grafico.data.labels = []
         grafico.data.datasets[0].data = []
         for (let i = 0 ; i < data.temperatura.length ; i++){
+            let tempoEdata = (`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} *${data.hora[i]}`).split('*')
 
-           grafico.data.labels.push(`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} ${data.hora[i]}`)
-           grafico.data.datasets[0].data.push(data.temperatura[i])
+            grafico.data.labels.push(tempoEdata)
+            grafico.data.datasets[0].data.push(data.temperatura[i])
+        
+            if(aux_data_hora[i] != grafico.data.labels[i]){
+                aux_data_hora.push(`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} ${data.hora[i]}`)
+            }
 
-          
-        } 
-        grafico.update()
+            if(aux_temp[i]!= grafico.data.datasets[0].data[i]){
+                aux_temp.push(grafico.data.datasets[0].data[i])
+            }
+
+
+        }
     }
-    aux_data_hora =[]
-    aux_temp = []
- }
-,2000)
+        grafico.update()
+}   ,2000)
 
 
 

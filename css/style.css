@@ -80,6 +80,12 @@ body{
 #upper-right{
     grid-column: 3/4;
     grid-row:1/2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-justify: auto;
+    letter-spacing: 1px;
+    color:white;
 }
 
 #lower-right{
