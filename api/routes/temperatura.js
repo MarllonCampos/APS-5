@@ -39,7 +39,6 @@ router.get('/',(req,res,next)=>{
             temperatura = []
             hora = []
             data = []
-            inserir = []
 
         conn.release();
     })

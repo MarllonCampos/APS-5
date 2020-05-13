@@ -9,19 +9,24 @@ var grafico = new Chart(ctx,{
     data:{
         labels:['a30',"b40","c60","d70"],
         datasets:
-            [{label:"Tabela de Temperaturas",
+            [{label:"Tabela de PPM (Particulas por metro cúbico)",
             data:["30","40","60","70"],
             borderWidth:2,
             borderColor:'rgba(77,166,253,0.85)',
-            backgroundColor:'transparent',
+            backgroundColor:'#10dccf',
         }]
-
+    },
+    options:{
+        scales:{
+            yAxes:[{ ticks:{ callback: function(value,index,values){ return  value + 'ppm'}}}]
+        }
     }
+
 })
 
 var RefreshAutomatico = setInterval(function minhafuncao() {
     $.ajax({
-         url: 'http://localhost:3000/temperatura/',
+         url: 'http://ec2-18-228-194-165.sa-east-1.compute.amazonaws.com:3000/temperatura/?_=1589324951813',
          dataType: 'json', 
          cache:false,
          type: 'get',
@@ -30,7 +35,7 @@ var RefreshAutomatico = setInterval(function minhafuncao() {
              console.log(response   )
          },
          error:function(erro){
-             console.log(erro)  
+             console.log("Alerta, erro em conectar a API")  
          },
          
      })
