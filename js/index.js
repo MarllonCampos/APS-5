@@ -8,6 +8,10 @@ var max = 0.00
 var media =1.3
 var min = 0.0000
 var lastValue
+var alerta = false
+
+
+
 
  
 
@@ -28,14 +32,13 @@ var updateMedia = setInterval(()=>{
         lastValue = temperatura[temperatura.length - 1]
     }
 
- 
+    
     media = media/temperatura.length
     
     
     upper_right.innerHTML = `Último valor inserido = ${lastValue}ppm <br>Máximo valor alcançado: ${max.toFixed(2)}ppm <br> Média dos valores = ${media.toFixed(2)}ppm <br> Minimo valor = ${min.toFixed(2)}ppm `
 
 
-    
 },1000)
 
 
@@ -43,21 +46,6 @@ var updateMedia = setInterval(()=>{
 
 
 
-
-
-
-
-function leftside(sheet){
-        document.querySelector('.pagestyle').setAttribute('href',sheet)
-
-   
-}
-
-
-function rightside(sheet){
-    document.querySelector('.pagestyle').setAttribute('href',sheet)
-     
-}
 
 
 

@@ -31,7 +31,8 @@ router.get('/',(req,res,next)=>{
                     {
                         temperatura: temperatura,
                         hora:hora,
-                        data: data,
+                        data: data
+                    
                     }   
                 );
                 
@@ -39,6 +40,7 @@ router.get('/',(req,res,next)=>{
             temperatura = []
             hora = []
             data = []
+            
 
         conn.release();
     })
