@@ -26,13 +26,13 @@ var grafico = new Chart(ctx,{
 
 var RefreshAutomatico = setInterval(function minhafuncao() {
     $.ajax({
-         url: 'http://ec2-18-228-194-165.sa-east-1.compute.amazonaws.com:3000/temperatura/?_=1589324951813',
+         url: 'http://localhost:3000/temperatura/?_=1589324951813',
          dataType: 'json', 
          cache:false,
          type: 'get',
          success: function (response) {
              updateChart(response)
-             console.log(response   )
+             
          },
          error:function(erro){
              console.log("Alerta, erro em conectar a API")  
@@ -61,7 +61,7 @@ var RefreshAutomatico = setInterval(function minhafuncao() {
         }
     }
         grafico.update()
-}   ,2000)
+}   ,5000)
 
 
 
