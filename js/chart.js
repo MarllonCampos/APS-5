@@ -26,7 +26,7 @@ var grafico = new Chart(ctx,{
 
 var RefreshAutomatico = setInterval(function minhafuncao() {
     $.ajax({
-         url: 'http://localhost:3000/temperatura/?_=1589324951813',
+         url: 'http://localhost:3000/temperatura/',
          dataType: 'json', 
          cache:false,
          type: 'get',
