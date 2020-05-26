@@ -46,6 +46,7 @@ router.get('/',(req,res,next)=>{
         conn.release();
     })
     console.log(req.ips)
+    console.log(req.ip)
 })
 
 
