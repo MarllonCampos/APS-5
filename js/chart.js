@@ -18,7 +18,7 @@ var grafico = new Chart(ctx,{
     },
     options:{
         scales:{
-            yAxes:[{ ticks:{ callback: function(value,index,values){ return  value + 'ppm'}}}]
+            yAxes:[{ ticks:{ callback: function(value,index,values){ return  value + 'ºC'}}}]
         }
     }
 

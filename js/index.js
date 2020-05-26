@@ -36,7 +36,7 @@ var updateMedia = setInterval(()=>{
     media = media/temperatura.length
     
     
-    upper_right.innerHTML = `Último valor inserido = ${lastValue}ppm <br>Máximo valor alcançado: ${max.toFixed(2)}ppm <br> Média dos valores = ${media.toFixed(2)}ppm <br> Minimo valor = ${min.toFixed(2)}ppm `
+    upper_right.innerHTML = `Último valor inserido = ${lastValue}ºC <br>Máximo valor alcançado: ${max.toFixed(2)}ºC <br> Média dos valores = ${media.toFixed(2)}ºC <br> Minimo valor = ${min.toFixed(2)}ºC `
 
 
 },1000)
