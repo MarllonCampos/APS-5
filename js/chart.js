@@ -61,7 +61,7 @@ var RefreshAutomatico = setInterval(function minhafuncao() {
         }
     }
         grafico.update()
-}   ,5000)
+}   ,3000)
 
 
 
