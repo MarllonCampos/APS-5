@@ -4,12 +4,12 @@
   "description": "Html/CSS do projeto com o arduino",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon api/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MarllonCampos/APS-5.git",
-    "start": "nodemon api/server.js"
+    "url": "git+https://github.com/MarllonCampos/APS-5.git"
   },
   "author": "Marllon Campos",
   "license": "ISC",
