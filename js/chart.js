@@ -9,7 +9,7 @@ var grafico = new Chart(ctx,{
     data:{
         labels:['a30',"b40","c60","d70"],
         datasets:
-            [{label:"Tabela de PPM (Particulas por metro cúbico)",
+            [{label:"Tabela de Temperatura (Em graus Celsius)",
             data:["30","40","60","70"],
             borderWidth:2,
             borderColor:'rgba(77,166,253,0.85)',
@@ -19,6 +19,7 @@ var grafico = new Chart(ctx,{
     options:{
         scales:{
             yAxes:[{ ticks:{ callback: function(value,index,values){ return  value + 'ºC'}}}]
+
         }
     }
 
