@@ -27,6 +27,7 @@ router.get('/',(req,res,next)=>{
 
                    hora.push(`${inserir[i]}${(resultado[i].Hora.substr(2,7))}`)
                }
+               
                 return res.status(200).send(
                     {
                         temperatura: temperatura,
@@ -44,6 +45,7 @@ router.get('/',(req,res,next)=>{
 
         conn.release();
     })
+    console.log(req.ip)
 })
 
 
