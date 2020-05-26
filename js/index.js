@@ -39,7 +39,7 @@ var updateMedia = setInterval(()=>{
     upper_right.innerHTML = `Último valor inserido = ${lastValue}°C <br>Máximo valor alcançado: ${max.toFixed(2)}°C <br> Média dos valores = ${media.toFixed(2)}°C <br> Minimo valor = ${min.toFixed(2)}°C `
 
 
-},1000)
+},3000)
 
 
 
