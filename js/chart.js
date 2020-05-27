@@ -1,5 +1,4 @@
 var ctx = document.getElementsByClassName('chart')
-var aux_temp = []
 var temperatura =[]
 var data_hora  = []
 
@@ -27,13 +26,8 @@ var grafico = new Chart(ctx,{
             yAxes:[{ 
                 ticks:{ 
                     callback: function(value,index,values){ return  value + 'ºC'},
-                    min:12
+                    suggestedMin:13
             }}],
-            xAxes:[{
-                ticks:{
-                    max:2
-            }}]
-
         }
     }
 
@@ -56,44 +50,33 @@ var RefreshAutomatico = setInterval(function minhafuncao() {
      })
      
     function updateChart(data){
+       
         grafico.data.labels = []
         grafico.data.datasets[0].data = []
+        var k = 10
         if (data.temperatura.length > 10 ){
+
             for (let i = 0 ; i < data.temperatura.length - (data.temperatura.length -10) ; i++){
-                let k = 10
                 let j = data.temperatura.length - k
                 let tempoEdata = (`${(data.data[j].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.    fromCharCode(47))} *${data.hora[j]}`).split('*')
 
                 grafico.data.labels.push(tempoEdata)
                 grafico.data.datasets[0].data.push(data.temperatura[j])
-
-
-                if(aux_temp[i]!= grafico.data.datasets[0].data[j]){
-                    aux_temp.push(grafico.data.datasets[0].data[j])
-                }
-
                 k = k - 1
-                
-               
             }
-            console.log("entrou")
+            
         }else{
+
             for (let i = 0 ; i < data.temperatura.length ; i++){
                 let tempoEdata = (`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.        fromCharCode(47))} *${data.hora[i]}`).split('*')
 
                 grafico.data.labels.push(tempoEdata)
                 grafico.data.datasets[0].data.push(data.temperatura[i])
-
-
-                if(aux_temp[i]!= grafico.data.datasets[0].data[i]){
-                    aux_temp.push(grafico.data.datasets[0].data[i])
-                }
-
             }   
-            console.log('Não entrou')
+        }   
             
-        }
         grafico.update()
+        window.updateMedia() // Chama essa função do arquivo "index.js"
     }
 }   ,3000)
 
