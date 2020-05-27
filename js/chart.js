@@ -1,6 +1,5 @@
 var ctx = document.getElementsByClassName('chart')
 var aux_temp = []
-var aux_data_hora = []
 var temperatura =[]
 var data_hora  = []
 
@@ -9,18 +8,30 @@ var grafico = new Chart(ctx,{
     data:{
         labels:['a30',"b40","c60","d70"],
         datasets:
-            [{label:"Tabela de Temperatura (Em graus Celsius)",
-            data:["30","40","60","70"],
+            [{label:"Temperatura em Celsius",
+               data:["30","33","21","12"],
             borderWidth:2,
             borderColor:'rgba(77,166,253,0.85)',
             backgroundColor:'#10dccf',
         }]
     },
     options:{
+        title:{
+            display:true,
+            text: "Tabela de Temperatura",
+            fontSize:28,
+            fontColor:'white',
+            fontWeight:'bold',
+        },
         scales:{
-            yAxes:[{ ticks:{ 
-                callback: function(value,index,values){ return  value + 'ºC'}
-            
+            yAxes:[{ 
+                ticks:{ 
+                    callback: function(value,index,values){ return  value + 'ºC'},
+                    min:12
+            }}],
+            xAxes:[{
+                ticks:{
+                    max:2
             }}]
 
         }
@@ -47,24 +58,43 @@ var RefreshAutomatico = setInterval(function minhafuncao() {
     function updateChart(data){
         grafico.data.labels = []
         grafico.data.datasets[0].data = []
-        for (let i = 0 ; i < data.temperatura.length ; i++){
-            let tempoEdata = (`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} *${data.hora[i]}`).split('*')
+        if (data.temperatura.length > 10 ){
+            for (let i = 0 ; i < data.temperatura.length - (data.temperatura.length -10) ; i++){
+                let k = 10
+                let j = data.temperatura.length - k
+                let tempoEdata = (`${(data.data[j].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.    fromCharCode(47))} *${data.hora[j]}`).split('*')
 
-            grafico.data.labels.push(tempoEdata)
-            grafico.data.datasets[0].data.push(data.temperatura[i])
-        
-            if(aux_data_hora[i] != grafico.data.labels[i]){
-                aux_data_hora.push(`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.fromCharCode(47))} ${data.hora[i]}`)
+                grafico.data.labels.push(tempoEdata)
+                grafico.data.datasets[0].data.push(data.temperatura[j])
+
+
+                if(aux_temp[i]!= grafico.data.datasets[0].data[j]){
+                    aux_temp.push(grafico.data.datasets[0].data[j])
+                }
+
+                k = k - 1
+                
+               
             }
+            console.log("entrou")
+        }else{
+            for (let i = 0 ; i < data.temperatura.length ; i++){
+                let tempoEdata = (`${(data.data[i].substring(0,10).replace("-",String.fromCharCode(47))).replace("-",String.        fromCharCode(47))} *${data.hora[i]}`).split('*')
 
-            if(aux_temp[i]!= grafico.data.datasets[0].data[i]){
-                aux_temp.push(grafico.data.datasets[0].data[i])
-            }
+                grafico.data.labels.push(tempoEdata)
+                grafico.data.datasets[0].data.push(data.temperatura[i])
 
 
+                if(aux_temp[i]!= grafico.data.datasets[0].data[i]){
+                    aux_temp.push(grafico.data.datasets[0].data[i])
+                }
+
+            }   
+            console.log('Não entrou')
+            
         }
-    }
         grafico.update()
+    }
 }   ,3000)
 
 
