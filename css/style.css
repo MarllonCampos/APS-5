@@ -12,7 +12,6 @@ body{
     grid-gap:12px ;
 }
 
-
 /* Criação do GRID e estilo dos objetos dentro do grid*/
 .container-content{
     width: 97vw;
@@ -25,7 +24,6 @@ body{
     text-align: center;
     grid-gap:10px;
     color:black;
-    
 }
 
 .content {
@@ -33,7 +31,6 @@ body{
     border-radius: 9px;
 }
 /*Fim da criação do GRID e estilos*/
-
 
 
 .logo{
