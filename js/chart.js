@@ -64,6 +64,7 @@ var RefreshAutomatico = setInterval(function minhafuncao() {
                 grafico.data.datasets[0].data.push(data.temperatura[j])
                 k = k - 1
             }
+            console.log('enttrou')
             
         }else{
 
