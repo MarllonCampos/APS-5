@@ -35,7 +35,7 @@ var grafico = new Chart(ctx,{
 
 var RefreshAutomatico = setInterval(function minhafuncao() {
     $.ajax({
-         url: 'http://18.228.194.165:3000/temperatura/',
+         url: 'http://localhost:3000/temperatura/',
          dataType: 'json', 
          cache:false,
          type: 'get',
@@ -44,7 +44,7 @@ var RefreshAutomatico = setInterval(function minhafuncao() {
              
          },
          error:function(erro){
-             console.log("Alerta, erro em conectar a API")  
+             console.error("Erro ao conectar a API")  
          },
          
      })
