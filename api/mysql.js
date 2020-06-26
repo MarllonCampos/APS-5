@@ -3,7 +3,7 @@ const mysql = require('mysql')
 
 const pool = mysql.createPool({
             "user":'marllon',
-            "password":'Marllon.10',
+            "password":'marllon',
             "database":'aps',
             "host":'localhost',
             "port":'3306'
